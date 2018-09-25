@@ -5,9 +5,11 @@ python:
 
 install:
     - pip install -r requirements.txt
+    - pip install pytest-cov
+    - pip install coveralls
 
 scripts:
     - pytest --cov=app/
 
 after_success:
-    - coveralls
+    - $ repo_token coveralls
